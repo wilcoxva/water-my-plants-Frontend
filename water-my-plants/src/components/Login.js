@@ -15,7 +15,7 @@ const LogIn = (props) => {
         axios
         .post("https://water-my-plants-backend-vw.herokuapp.com/login", info)
         .then(res => {
-            localStorage.setItem("token", res.data.payload);
+            localStorage.setItem("token", res.data.token);
             props.history.push("/PlantsList");
         })
         .catch(err => {

@@ -10,7 +10,7 @@ const PlantsList = () => {
         axiosWithAuth()
         .get('https://water-my-plants-backend-vw.herokuapp.com/user/plants')
         .then(res => {
-            setPlants(res);
+            setPlants(res.data);
         })
     }, [plants]);
 
@@ -29,8 +29,6 @@ const PlantsList = () => {
             plants.push(res);
         })
     };
-
-    console.log("plants", plants)
 
     return (
         <div>
