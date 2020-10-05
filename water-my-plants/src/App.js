@@ -4,6 +4,7 @@ import { Home, About, Contact, Navigation } from './components';
 import { Route } from 'react-router-dom';
 import LogIn from './components/Login';
 import PlantsList from './components/PlantsList';
+import LogOut from './components/Logout';
 
 const App = () => (
   <div>
@@ -13,6 +14,7 @@ const App = () => (
     <Route path="/contact" component={Contact} />
     <Route path="/PlantsList" component={PlantsList} />
     <Route path="/LogIn" component={LogIn} />
+    <Route path="/LogOut" component={LogOut} />
   </div>
 );
 

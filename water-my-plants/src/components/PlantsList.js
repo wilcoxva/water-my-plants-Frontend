@@ -37,7 +37,6 @@ const PlantsList = () => {
                 <input type="text" name="species" placeholder="Enter your species." value={info.species} onChange={handleChange}/>
                 <input type="text" name="h2oFrequency" placeholder="Enter your h2o frequency." value={info.h2oFrequency} onChange={handleChange}/>
                 <input type="text" name="image_url" placeholder="Enter your image url." value={info.image_url} onChange={handleChange}/>
-                <input type="text" name="user_id" placeholder="Enter your user_id." value={info.user_id} onChange={handleChange}/>
                 <button type="submit">Submit</button>
             </form>   
             <p>Paragraph text.</p>

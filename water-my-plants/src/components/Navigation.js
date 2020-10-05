@@ -21,6 +21,9 @@ const Navigation = () => {
         <div>
           <Link to="/LogIn">Log In</Link>
         </div>
+        <div>
+          <Link to="/LogOut">Log Out</Link>
+        </div>
       </div>
     </div>
   );
