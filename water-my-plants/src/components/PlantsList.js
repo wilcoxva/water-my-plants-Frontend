@@ -46,7 +46,7 @@ const PlantsList = () => {
                         <h1>{plant.nickname}</h1>
                         <p>{plant.species}</p>
                         <p>{plant.h2oFrequency}</p>
-                        <p>{plant.image_url}</p>
+                        <img src={plant.image_url} width="200" height="150" />
                         <p>{plant.user_id}</p>
                     </div>
                 ))}
