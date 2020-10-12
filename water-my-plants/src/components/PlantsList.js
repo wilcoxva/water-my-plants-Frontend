@@ -14,6 +14,16 @@ const PlantsList = () => {
         })
     }, [plants]);
 
+    const [user, setUser] = useState([]);
+
+    useEffect(() => {
+        axiosWithAuth()
+        .get('https://water-my-plants-backend-vw.herokuapp.com/user')
+        .then(res => {
+            setUser(res.data);
+        })
+    }, [user]);
+
     const [info, setInfo] = useState("");
 
     const handleChange = (e) => {
@@ -47,7 +57,7 @@ const PlantsList = () => {
                         <p>{plant.species}</p>
                         <p>{plant.h2oFrequency}</p>
                         <img src={plant.image_url} width="200" height="150" />
-                        <p>{plant.user_id}</p>
+                        <p>{user.username}'s Plant</p>
                     </div>
                 ))}
             </div>
