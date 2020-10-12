@@ -40,15 +40,17 @@ const PlantsList = () => {
                 <button type="submit">Submit</button>
             </form>   
             <p>Paragraph text.</p>
-            {plants.map(plant => (
-                <div key={plant.nickname}>
-                    <h1>{plant.nickname}</h1>
-                    <p>{plant.species}</p>
-                    <p>{plant.h2oFrequency}</p>
-                    <p>{plant.image_url}</p>
-                    <p>{plant.user_id}</p>
-                </div>
-            ))}
+            <div className="pl-container">
+                {plants.map(plant => (
+                    <div className="p-container" key={plant.nickname}>
+                        <h1>{plant.nickname}</h1>
+                        <p>{plant.species}</p>
+                        <p>{plant.h2oFrequency}</p>
+                        <p>{plant.image_url}</p>
+                        <p>{plant.user_id}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
