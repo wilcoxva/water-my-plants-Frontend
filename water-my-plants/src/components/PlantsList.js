@@ -41,7 +41,7 @@ const PlantsList = () => {
             </form>   
             <p>Paragraph text.</p>
             {plants.map(plant => (
-                <div>
+                <div key={plant.nickname}>
                     <h1>{plant.nickname}</h1>
                     <p>{plant.species}</p>
                     <p>{plant.h2oFrequency}</p>
