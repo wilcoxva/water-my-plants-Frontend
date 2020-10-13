@@ -5,6 +5,6 @@ import Navigation from './Navigation';
 import Login from './Login';
 import Logout from './Logout';
 import PlantsList from './PlantsList';
-import PlantForm from './PlantForm';
+import Plant from './Plant';
 
-export { Home, About, Contact, Navigation, Login, Logout, PlantsList, PlantForm };
+export { Home, About, Contact, Navigation, Login, Logout, PlantsList, Plant };

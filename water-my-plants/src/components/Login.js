@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { axiosWithAuth } from './utils/axiosWithAuth';
 
 const LogIn = props => {
 
@@ -16,7 +17,8 @@ const LogIn = props => {
         .post("https://water-my-plants-backend-vw.herokuapp.com/login", info)
         .then(res => {
             localStorage.setItem("token", res.data.token);
-            props.history.push("/PlantsList");
+            props.setIsLoggedIn(true);
+            props.history.push(`/PlantsList`);
         })
         .catch(err => {
             console.log(err);

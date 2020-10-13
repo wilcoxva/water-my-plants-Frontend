@@ -4,15 +4,12 @@ import { axiosWithAuth } from './utils/axiosWithAuth';
 
 const LogOut = (props) => {
 
-    axios
-        .delete("https://water-my-plants-backend-vw.herokuapp.com/logout")
-        .then(res => {
-            localStorage.setItem("token", res.data.token);
-            props.history.push("/LogIn");
-        })
-        .catch(err => {
-            console.log(err);
-        });
+    useEffect(() => {
+        localStorage.removeItem("token");
+        props.setIsLoggedIn(false)
+        props.history.push("/LogIn");
+    }, [])
+    
 
     return (
         <div>

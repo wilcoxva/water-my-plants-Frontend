@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './css/main.css';
-import { Home, About, Contact, Navigation } from './components';
+import { Home, About, Contact, Navigation, Plant } from './components';
 import { Route } from 'react-router-dom';
 import LogIn from './components/Login';
 import PlantsList from './components/PlantsList';
@@ -8,15 +8,30 @@ import LogOut from './components/Logout';
 
 const App = () => {
 
+  let token = localStorage.getItem("token");
+
+    const [isLoggedIn, setIsLoggedIn] = useState();
+    console.log("state", isLoggedIn)
+
+    useEffect(() => {
+      if (token) {
+        console.log("token", typeof(token))
+        setIsLoggedIn(true)
+      } else {
+        setIsLoggedIn(false)
+      }
+    }, [isLoggedIn]);
+
   return (
     <div>
-      <Navigation />
+      <Navigation isLoggedIn={isLoggedIn}/>
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/PlantsList" component={PlantsList} />
-      <Route path="/LogIn" component={LogIn} />
-      <Route path="/LogOut" component={LogOut} />
+      <Route path="/:plantId" component={Plant} />
+      <Route path="/LogIn" render={props => (<LogIn {...props} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route path="/LogOut" render={props => (<LogOut {...props} setIsLoggedIn={setIsLoggedIn} />)} />
     </div>
   )
   };
