@@ -11,9 +11,7 @@ const Plant = props => {
         .then(res => {
             setPlant(res.data);
         })
-    }, [props.location.pathname]);
-
-    console.log(props)
+    }, [props.match.params.plantId]);
 
     const [info, setInfo] = useState("");
 
@@ -25,9 +23,9 @@ const Plant = props => {
     const submitHandler = (e) => {
         e.preventDefault();
         axiosWithAuth()
-        .put(`https://water-my-plants-backend-vw.herokuapp.com/user/`, info)
+        .put(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`, info)
         .then(res => {
-            console.log("res", res)
+            setPlant(res.data)
         })
     };
 
