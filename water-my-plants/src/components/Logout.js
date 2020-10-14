@@ -10,10 +10,8 @@ const LogOut = (props) => {
         props.history.push("/LogIn");
     }, [])
     
-
     return (
         <div>
-            
         </div>
     );
 };

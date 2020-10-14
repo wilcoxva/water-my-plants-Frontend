@@ -3,17 +3,17 @@ import { axiosWithAuth } from './utils/axiosWithAuth';
 
 const Plant = props => {
 
-    console.log(props)
-
     const [plant, setPlant] = useState([]);
 
     useEffect(() => {
         axiosWithAuth()
-        .get(`https://water-my-plants-backend-vw.herokuapp.com/user${props.location.pathname}`)
+        .get(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`)
         .then(res => {
             setPlant(res.data);
         })
     }, [props.location.pathname]);
+
+    console.log(props)
 
     const [info, setInfo] = useState("");
 
