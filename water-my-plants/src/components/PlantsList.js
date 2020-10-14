@@ -61,7 +61,7 @@ const PlantsList = props => {
                         <p>{plant.h2oFrequency}</p>
                         <img src={plant.image_url} width="200" height="150" />
                         <p>{user.username}'s Plant</p>
-                        <Link to={{ pathname:`/${plant.id}` }}>View Me</Link>
+                        <Link to={{ pathname:`/${plant.user_id}/${plant.id}` }}>View Me</Link>
                     </div>
                 ))}
             </div>

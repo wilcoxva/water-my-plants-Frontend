@@ -29,9 +29,9 @@ const App = () => {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/PlantsList" component={PlantsList} />
-      <Route path="/:plantId" component={Plant} />
       <Route path="/LogIn" render={props => (<LogIn {...props} setIsLoggedIn={setIsLoggedIn} />)} />
       <Route path="/LogOut" render={props => (<LogOut {...props} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route path="/:userId/:plantId" component={Plant} />
     </div>
   )
   };
