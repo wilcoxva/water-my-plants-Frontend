@@ -7,15 +7,11 @@ const PlantsList = props => {
     const [plants, setPlants] = useState([]);
 
     useEffect(() => {
-        let isSubscribed = true;
         axiosWithAuth()
         .get('https://water-my-plants-backend-vw.herokuapp.com/user/plants')
         .then(res => {
-            if (isSubscribed) {
-                setPlants(res.data);
-            }
+            setPlants(res.data);
         })
-        return () => isSubscribed = false
     }, [plants]);
 
     const [user, setUser] = useState([]);
