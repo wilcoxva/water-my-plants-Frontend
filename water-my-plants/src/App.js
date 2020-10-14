@@ -10,17 +10,15 @@ const App = () => {
 
   let token = localStorage.getItem("token");
 
-    const [isLoggedIn, setIsLoggedIn] = useState();
-    console.log("state", isLoggedIn)
+  const [isLoggedIn, setIsLoggedIn] = useState();
 
-    useEffect(() => {
-      if (token) {
-        console.log("token", typeof(token))
-        setIsLoggedIn(true)
-      } else {
-        setIsLoggedIn(false)
-      }
-    }, [isLoggedIn]);
+  useEffect(() => {
+    if (token) {
+      setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
+  }, [token]);
 
   return (
     <div>

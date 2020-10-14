@@ -43,7 +43,7 @@ const Plant = props => {
                         <h1>{plant.nickname}</h1>
                         <p>{plant.species}</p>
                         <p>{plant.h2oFrequency}</p>
-                        <img src={plant.image_url} width="200" height="150" />
+                        <img src={plant.image_url} alt="Plant" width="200" height="150" />
                     </div>
             </div>
         </div>

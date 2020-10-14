@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { axiosWithAuth } from './utils/axiosWithAuth';
+import React, { useEffect } from 'react';
 
 const LogOut = (props) => {
 
@@ -8,7 +6,7 @@ const LogOut = (props) => {
         localStorage.removeItem("token");
         props.setIsLoggedIn(false)
         props.history.push("/LogIn");
-    }, [])
+    }, [props])
     
     return (
         <div>
