@@ -5,6 +5,8 @@ const Plant = props => {
 
     const [plant, setPlant] = useState([]);
 
+    console.log(typeof props.match.params.plantId);
+
     useEffect(() => {
         axiosWithAuth()
         .get(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`)
