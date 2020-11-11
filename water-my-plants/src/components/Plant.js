@@ -38,6 +38,7 @@ const Plant = props => {
                 <input type="text" name="nickname" placeholder="Enter your nickname." value={info.nickname} onChange={handleChange}/>
                 <input type="text" name="species" placeholder="Enter your species." value={info.species} onChange={handleChange}/>
                 <input type="text" name="h2oFrequency" placeholder="Enter your h2o frequency." value={info.h2oFrequency} onChange={handleChange}/>
+                <input type="text" name="image_url" placeholder="Enter your image url." value={info.image_url} onChange={handleChange}/>
                 <button type="submit">Submit</button>
             </form>   
             <div className="pl-container">
