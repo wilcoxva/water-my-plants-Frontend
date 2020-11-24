@@ -33,6 +33,7 @@ const LogIn = props => {
 
     return (
         <div>
+            <h1>Log In</h1>
             <form onSubmit={submitHandler}>
                 <input type="text" name="username" placeholder="Enter your username." value={info.username} onChange={handleChange}/>
                 <input type="text" name="password" placeholder="Enter your password." value={info.password} onChange={handleChange}/>

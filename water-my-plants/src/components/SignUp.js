@@ -8,7 +8,6 @@ const SignUp = props => {
     const [info, setInfo] = useState("");
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
-    const [dialogue, setDialogue] = useState("");
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -32,7 +31,6 @@ const SignUp = props => {
         .catch(err => {
             console.log(err.response.data);
             setError(true);
-            setDialogue(`${err.response.data}`);
         });
     };
 
@@ -59,6 +57,7 @@ const SignUp = props => {
 
     return (
         <div>
+            <h1>Sign Up</h1>
             <form onSubmit={submitHandler}>
                 <input type="text" name="username" placeholder="Enter your new username." value={info.username} onChange={handleChange}/>
                 <input type="text" name="password" placeholder="Enter your new password." value={info.password} onChange={handleChange}/>
@@ -79,7 +78,6 @@ const SignUp = props => {
             onOk={handleOkErr}
             onCancel={handleCancelErr}
             >
-            <p>{dialogue}</p>
             <p>Username or phone number is already in use.</p>
             <p>Or you forgot to fill in one of the fields.</p>
             <p>Try again!</p>

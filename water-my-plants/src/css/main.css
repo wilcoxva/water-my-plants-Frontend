@@ -16,15 +16,11 @@ code {
 }
 h1 {
   font-family: 'Great Vibes', cursive;
+  font-size: 45px;
 }
-.container {
+.nav-container {
   display: flex;
-}
-a {
-  margin: 10px;
-  padding: 10px;
-  color: blue;
-  size: 50px;
+  justify-content: center;
 }
 .pl-container {
   display: flex;
