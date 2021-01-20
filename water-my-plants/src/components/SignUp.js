@@ -85,6 +85,7 @@ const SignUp = (props) => {
             </Modal>
         </div>
     )
+
 };
 
 export default SignUp;
