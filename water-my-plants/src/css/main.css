@@ -17,6 +17,19 @@ code {
 h1 {
   font-family: 'Great Vibes', cursive;
 }
+.main-bg {
+  background-image: url('../components/images/plants.png');
+  background-size: cover;
+  height: 100vh;
+}
+.alt-bg {
+  background-image: url('../components/images/plants2.png');
+  background-size: cover;
+  height: 100vh;
+}
+.intro {
+  margin-left: 40%;
+}
 .container {
   display: flex;
 }
@@ -32,29 +45,30 @@ a {
   flex-direction: row;
 }
 .p-container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.795);
   border: 2px solid green;
-  border-radius: 5px;
+  border-radius: 25px;
   margin: 2%;
   padding: 2%;
   height: 400px;
-  width: 200px;
+  width: fit-content;
 }
 .p-container h1 {
   color: green;
 }
 .p-container p {
-  color: red;
+  color: black;
 }
-.main-bg {
-  background-image: url('../components/plants.png');
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
+.plantslist_form {
+  margin-left: 42%;
+  background-color: rgba(255, 255, 255, 0.815);
+  width: fit-content;
+  padding: 20px;
+  border-radius: 25px;
 }
-.alt-bg {
-  background-image: url('../components/images/5566.jpg');
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
+.plantslist_form input {
+  margin: 10px;
+}
+.plantslist_form button {
+  margin-left: 35%;
 }
