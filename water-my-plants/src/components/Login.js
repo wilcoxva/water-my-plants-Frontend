@@ -31,11 +31,16 @@ const LogIn = (props) => {
     return (
         <div className="main-bg">
             <Navigation isLoggedIn={isLoggedIn} />
-            <form onSubmit={submitHandler}>
+            <form className="login" onSubmit={submitHandler}>
                 <input type="text" name="username" placeholder="Enter your username." value={info.username} onChange={handleChange}/>
                 <input type="text" name="password" placeholder="Enter your password." value={info.password} onChange={handleChange}/>
                 <Button type="primary" htmlType="submit">Submit</Button>
-            </form>   
+            </form>
+            <div className="intro">
+                <h2>Please log in with the following credentials:</h2>
+                <h2>username: username3</h2>
+                <h2>password: password</h2>
+            </div>  
         </div>
     )
 };

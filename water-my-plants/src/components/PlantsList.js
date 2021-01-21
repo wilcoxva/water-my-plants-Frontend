@@ -35,8 +35,9 @@ const PlantsList = (props) => {
 
     const submitHandler = () => {
         axiosWithAuth()
-        .post('https://water-my-plants-backend-vw.herokuapp.com/user', info)
+        .post('https://water-my-plants-backend-vw.herokuapp.com/user/', info)
         .then(res => {
+            console.log(res);
             plants.push(res);
         })
     };

@@ -17,6 +17,14 @@ const Plant = (props) => {
         })
     }, [props.match.params.plantId]);
 
+    const deleteHandler = (e) => {
+        axiosWithAuth()
+        .delete(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`)
+        .then(res => {
+            props.history.push('/PlantsList');
+        })
+    }
+
     const [info, setInfo] = useState("");
 
     const handleChange = (e) => {
@@ -36,22 +44,25 @@ const Plant = (props) => {
     return (
         <div className="alt-bg">
             <Navigation isLoggedIn={isLoggedIn} />
-            <h1>Form</h1>
-            <form onSubmit={submitHandler}>
-                <input type="text" name="nickname" placeholder="Enter your nickname." value={info.nickname} onChange={handleChange}/>
-                <input type="text" name="common_name" placeholder="Enter your common name." value={info.common_name} onChange={handleChange}/>
-                <input type="text" name="h2oFrequency" placeholder="Enter your h2o frequency." value={info.h2oFrequency} onChange={handleChange}/>
-                <input type="text" name="image_url" placeholder="Enter your image url." value={info.image_url} onChange={handleChange}/>
-                <button type="submit">Submit</button>
-            </form>   
-            <div className="pl-container">
-                    <div className="p-container" key={plant.nickname}>
+            <div className="plantcontainer">
+                <div className="pl-container">
+                    <form className="p-container" key={plant.nickname} onSubmit={deleteHandler}>
                         <h1>{plant.nickname}</h1>
                         <p>Common name: {plant.common_name}</p>
                         <p>Thirst level: {plant.h2oFrequency}</p>
                         <img src={plant.image_url} alt="Plant" width="200" height="150" /><br/>
                         <Link to={{ pathname:'/PlantsList' }}>Go back</Link>
-                    </div>
+                        <button type="submit">Delete Plant</button>
+                    </form>
+                </div>
+                <form className="plantslist_form" onSubmit={submitHandler}>
+                    <h1>Update your Plant</h1>
+                    <input type="text" name="nickname" placeholder="Enter your nickname." value={info.nickname} onChange={handleChange}/><br/>
+                    <input type="text" name="common_name" placeholder="Enter your common name." value={info.common_name} onChange={handleChange}/><br/>
+                    <input type="text" name="h2oFrequency" placeholder="Enter your h2o frequency." value={info.h2oFrequency} onChange={handleChange}/><br/>
+                    <input type="text" name="image_url" placeholder="Enter your image url." value={info.image_url} onChange={handleChange}/><br/>
+                    <button type="submit">Submit</button>
+                </form>  
             </div>
         </div>
     );
