@@ -47,8 +47,8 @@ const Plant = (props) => {
             <div className="pl-container">
                     <div className="p-container" key={plant.nickname}>
                         <h1>{plant.nickname}</h1>
-                        <p>{plant.common_name}</p>
-                        <p>{plant.h2oFrequency}</p>
+                        <p>Common name: {plant.common_name}</p>
+                        <p>Thirst level: {plant.h2oFrequency}</p>
                         <img src={plant.image_url} alt="Plant" width="200" height="150" /><br/>
                         <Link to={{ pathname:'/PlantsList' }}>Go back</Link>
                     </div>
