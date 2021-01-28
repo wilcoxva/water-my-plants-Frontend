@@ -6,7 +6,6 @@ import Navigation from './Navigation';
 
 const SignUp = (props) => {
 
-    
     const isLoggedIn = props.isLoggedIn;
 
     const [info, setInfo] = useState("");
