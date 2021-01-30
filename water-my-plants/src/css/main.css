@@ -46,3 +46,15 @@ a {
 .p-container p {
   color: red;
 }
+.main-bg {
+  background-image: url('../components/plants.png');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.alt-bg {
+  background-image: url('../components/images/5566.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}

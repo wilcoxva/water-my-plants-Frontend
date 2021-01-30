@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from './utils/axiosWithAuth';
 import { Link } from "react-router-dom";
+import Navigation from './Navigation';
 
-const PlantsList = props => {
+const PlantsList = (props) => {
 
     const [plants, setPlants] = useState([]);
+    const isLoggedIn = props.isLoggedIn;
 
     useEffect(() => {
         axiosWithAuth()
@@ -40,7 +42,8 @@ const PlantsList = props => {
     };
 
     return (
-        <div>
+        <div className="alt-bg">
+            <Navigation isLoggedIn={isLoggedIn} />
             <form onSubmit={submitHandler}>
                 <input type="text" name="nickname" placeholder="Enter your nickname." value={info.nickname} onChange={handleChange}/>
                 <input type="text" name="species" placeholder="Enter your species." value={info.species} onChange={handleChange}/>

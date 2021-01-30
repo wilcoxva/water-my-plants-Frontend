@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'antd/dist/antd.css';
 import { Modal } from 'antd';
+import Navigation from './Navigation';
 
-const SignUp = props => {
+const SignUp = (props) => {
+
+    const isLoggedIn = props.isLoggedIn;
 
     const [info, setInfo] = useState("");
     const [success, setSuccess] = useState(false);
@@ -53,6 +56,7 @@ const SignUp = props => {
 
     return (
         <div>
+            <Navigation isLoggedIn={isLoggedIn} />
             <form onSubmit={submitHandler}>
                 <input type="text" name="username" placeholder="Enter your new username." value={info.username} onChange={handleChange}/>
                 <input type="text" name="password" placeholder="Enter your new password." value={info.password} onChange={handleChange}/>

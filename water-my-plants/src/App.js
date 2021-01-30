@@ -12,7 +12,7 @@ const App = () => {
 
   let token = localStorage.getItem("token");
 
-  const [isLoggedIn, setIsLoggedIn] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (token) {
@@ -24,15 +24,15 @@ const App = () => {
 
   return (
     <div>
-      <Navigation isLoggedIn={isLoggedIn}/>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/contact" component={Contact} />
-      <PrivateRoute path="/PlantsList" component={PlantsList} />
-      <Route exact path="/LogIn" render={props => (<LogIn {...props} setIsLoggedIn={setIsLoggedIn} />)} />
-      <Route path="/SignUp" render={props => (<SignUp {...props} setIsLoggedIn={setIsLoggedIn} />)} />
-      <Route path="/LogOut" render={props => (<LogOut {...props} setIsLoggedIn={setIsLoggedIn} />)} />
-      <PrivateRoute path="/:userId/:plantId" component={Plant} />     
+      {/* <Navigation isLoggedIn={isLoggedIn}/> */}
+      <Route exact path="/" render={props => (<Home {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route path="/about" render={props => (<About {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route path="/contact" render={props => (<Contact {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <PrivateRoute path="/PlantsList" component={props => (<PlantsList {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route exact path="/LogIn" render={props => (<LogIn {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route path="/SignUp" render={props => (<SignUp {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route path="/LogOut" render={props => (<LogOut {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <PrivateRoute path="/:userId/:plantId" component={props => (<Plant {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />     
     </div>
   )
   };
