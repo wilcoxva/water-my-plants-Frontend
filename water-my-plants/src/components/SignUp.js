@@ -18,6 +18,7 @@ const SignUp = (props) => {
         setInfo({...info, [e.target.name]: e.target.value});
     };
 
+    
     const submitHandler = (e) => {
         e.preventDefault();
         axios
