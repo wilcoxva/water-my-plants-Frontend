@@ -6,6 +6,7 @@ import LogIn from './components/Login';
 import PlantsList from './components/PlantsList';
 import LogOut from './components/Logout';
 import 'antd/dist/antd.css';
+import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {
 
@@ -27,11 +28,11 @@ const App = () => {
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/PlantsList" component={PlantsList} />
+      <PrivateRoute path="/PlantsList" component={PlantsList} />
       <Route exact path="/LogIn" render={props => (<LogIn {...props} setIsLoggedIn={setIsLoggedIn} />)} />
       <Route path="/SignUp" render={props => (<SignUp {...props} setIsLoggedIn={setIsLoggedIn} />)} />
       <Route path="/LogOut" render={props => (<LogOut {...props} setIsLoggedIn={setIsLoggedIn} />)} />
-      <Route path="/:userId/:plantId" component={Plant} />     
+      <PrivateRoute path="/:userId/:plantId" component={Plant} />     
     </div>
   )
   };

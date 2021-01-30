@@ -8,12 +8,6 @@ const Plant = props => {
     console.log(typeof props.match.params.plantId);
 
     useEffect(() => {
-        document.body.style.backgroundImage = "url('https://image.shutterstock.com/z/stock-photo-leaf-background-on-a-green-background-1557686843.jpg')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "no-repeat";
-    }, []);
-
-    useEffect(() => {
         axiosWithAuth()
         .get(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`)
         .then(res => {

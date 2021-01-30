@@ -7,12 +7,6 @@ const PlantsList = props => {
     const [plants, setPlants] = useState([]);
 
     useEffect(() => {
-        document.body.style.backgroundImage = "url('https://image.shutterstock.com/z/stock-photo-leaf-background-on-a-green-background-1557686843.jpg')";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundRepeat = "no-repeat";
-    }, []);
-
-    useEffect(() => {
         axiosWithAuth()
         .get('https://water-my-plants-backend-vw.herokuapp.com/user/plants')
         .then(res => {
