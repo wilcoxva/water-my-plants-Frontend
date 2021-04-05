@@ -21,6 +21,7 @@ const Plant = (props) => {
         axiosWithAuth()
         .delete(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`)
         .then(res => {
+            console.log(res)
             props.history.push('/PlantsList');
         })
     }

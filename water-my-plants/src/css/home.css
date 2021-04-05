@@ -10,3 +10,23 @@ code {
 h1 {
   font-family: 'Great Vibes', cursive;
 }
+.main-bg {
+  background-image: url('../components/images/plants.png');
+  background-size: cover;
+  height: 100vh;
+}
+.alt-bg {
+  background-image: url('../components/images/plants2.png');
+  background-size: auto;
+  height: 200vh;
+  background-repeat: repeat;
+}
+.intro {
+  margin-left: 40%;
+}
+.login {
+  margin: 20px 20px 20px 40%;
+}
+.login input {
+  margin: 5px;
+}
