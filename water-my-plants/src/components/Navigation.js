@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Navigation = ({isLoggedIn}) => {
 
@@ -9,17 +10,17 @@ const Navigation = ({isLoggedIn}) => {
         <div className="ncontainer">
           <h2>Water My Plants</h2>
           <div className="links">
-            <Link to="/" style={{ textDecoration: 'none', color: "gray", margin: "5px", padding: "5px" }}>Home</Link>
-            <Link to="/about" style={{ textDecoration: 'none', color: "gray", margin: "5px", padding: "5px" }}>About</Link>
-            <Link to="/contact" style={{ textDecoration: 'none', color: "gray", margin: "5px", padding: "5px" }}>Contact</Link>
+            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/about">About</StyledLink>
+            <StyledLink to="/contact">Contact</StyledLink>
             {isLoggedIn ?
-              <Link to="/PlantsList" style={{ textDecoration: 'none', color: "gray", margin: "5px", padding: "5px" }}>PlantsList</Link> :
-              <Link />
+              <StyledLink to="/PlantsList">PlantsList</StyledLink> :
+              <StyledLink />
             }
             {isLoggedIn ?
-              <Link to="/LogOut" style={{ textDecoration: 'none', color: "gray", margin: "5px", padding: "5px" }}>LogOut</Link> :
-              [<Link to="/LogIn" style={{ textDecoration: 'none', color: "gray", margin: "5px", padding: "5px" }}>LogIn</Link>,
-              <Link to="/SignUp" style={{ textDecoration: 'none', color: "gray", margin: "5px", padding: "5px" }}>SignUp</Link>]
+              <StyledLink to="/LogOut">LogOut</StyledLink> :
+              [<StyledLink to="/LogIn">LogIn</StyledLink>,
+              <StyledLink to="/SignUp">SignUp</StyledLink>]
             }
           </div>
         </div>
@@ -27,5 +28,16 @@ const Navigation = ({isLoggedIn}) => {
     </div>
   );
 };
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: gray;
+  margin: 5px;
+  padding: 5px;
+  &:hover {
+    background-color: green;
+    color: white;
+  }
+`
 
 export default Navigation;
