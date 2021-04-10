@@ -7,29 +7,59 @@ const Navigation = ({isLoggedIn}) => {
   return (
     <div>
       <div className="App">
-        <div className="ncontainer">
+        {isLoggedIn ?
+          <div className="ncontainer" style={{ backgroundImage: "linear-gradient(white, rgb(143, 185, 143))", }}>
+            <h2>Water My Plants</h2>
+            <div className="links">
+              <GreenLink to="/">Home</GreenLink>
+              <GreenLink to="/about">About</GreenLink>
+              <GreenLink to="/contact">Contact</GreenLink>
+              {isLoggedIn ?
+                <GreenLink to="/PlantsList">PlantsList</GreenLink> :
+                <GreenLink />
+              }
+              {isLoggedIn ?
+                <GreenLink to="/LogOut">LogOut</GreenLink> :
+                [<GreenLink to="/LogIn">LogIn</GreenLink>,
+                <GreenLink to="/SignUp">SignUp</GreenLink>]
+              }
+            </div>
+          </div> :
+          <div className="ncontainer" style={{ backgroundImage: "linear-gradient(white, pink)", }}>
           <h2>Water My Plants</h2>
           <div className="links">
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/about">About</StyledLink>
-            <StyledLink to="/contact">Contact</StyledLink>
+            <PinkLink to="/">Home</PinkLink>
+            <PinkLink to="/about">About</PinkLink>
+            <PinkLink to="/contact">Contact</PinkLink>
             {isLoggedIn ?
-              <StyledLink to="/PlantsList">PlantsList</StyledLink> :
-              <StyledLink />
+              <PinkLink to="/PlantsList">PlantsList</PinkLink> :
+              <PinkLink />
             }
             {isLoggedIn ?
-              <StyledLink to="/LogOut">LogOut</StyledLink> :
-              [<StyledLink to="/LogIn">LogIn</StyledLink>,
-              <StyledLink to="/SignUp">SignUp</StyledLink>]
+              <PinkLink to="/LogOut">LogOut</PinkLink> :
+              [<PinkLink to="/LogIn">LogIn</PinkLink>,
+              <PinkLink to="/SignUp">SignUp</PinkLink>]
             }
           </div>
         </div>
+        }
       </div>
     </div>
   );
 };
 
-const StyledLink = styled(Link)`
+const PinkLink = styled(Link)`
+  text-decoration: none;
+  color: gray;
+  margin: 5px;
+  padding: 5px;
+  &:hover {
+    background-color: pink;
+    color: white;
+  }
+`
+
+const GreenLink = styled(Link)`
   text-decoration: none;
   color: gray;
   margin: 5px;
