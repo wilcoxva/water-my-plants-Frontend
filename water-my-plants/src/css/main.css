@@ -28,8 +28,10 @@ h1 {
   height: 200vh;
   background-repeat: repeat;
 }
-.intro {
-  margin-left: 40%;
+.intro h2 {
+  text-align: center;
+  font-family: 'Garamond';
+  font-weight: bold;
 }
 .login {
   margin: 20px 20px 20px 40%;

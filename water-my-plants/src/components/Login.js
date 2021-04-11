@@ -38,7 +38,7 @@ const LogIn = (props) => {
             </form>
             <div className="intro">
                 <h2>Please log in with the following credentials:</h2>
-                <h2>username: username3</h2>
+                <h2>username: username1</h2>
                 <h2>password: password</h2>
             </div>  
         </div>
