@@ -58,7 +58,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 70%;
+  width: 100%;
 }
 .p-container {
   background-color: rgba(255, 255, 255, 0.795);
@@ -75,17 +75,10 @@ h1 {
 .p-container p {
   color: black;
 }
-.plantslist_form {
-  margin-left: 100px;
-  background-color: rgba(255, 255, 255, 0.815);
-  width: fit-content;
-  padding: 20px;
-  border-radius: 25px;
-}
-.plantslist_form input {
+.p-container input {
   margin: 10px;
 }
-.plantslist_form button {
+.p-container button {
   margin-left: 35%;
 }
 .plantcontainer {

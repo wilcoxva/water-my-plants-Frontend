@@ -46,7 +46,7 @@ const PlantsList = (props) => {
         <div className="alt-bg">
             <Navigation isLoggedIn={isLoggedIn} />
             <div className="pl-outer-container">
-                <div className="plantslist_form">
+                <div className="p-container">
                     <h1>Create a new plant:</h1>
                     <form onSubmit={submitHandler}>
                         <input type="text" name="nickname" placeholder="Enter your nickname." value={info.nickname} onChange={handleChange}/><br/>
