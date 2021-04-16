@@ -81,8 +81,6 @@ h1 {
 .p-container button {
   margin-left: 35%;
 }
-.plantcontainer {
-  display: flex;
+.justify-content {
   justify-content: center;
-  margin-top: 75px;
 }
