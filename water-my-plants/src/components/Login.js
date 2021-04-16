@@ -21,7 +21,7 @@ const LogIn = (props) => {
         .then(res => {
             localStorage.setItem("token", res.data.token);
             props.setIsLoggedIn(true);
-            props.history.push('/PlantsList');
+            props.history.push(`/PlantsList`);
         })
         .catch(err => {
             console.log(err);
@@ -34,7 +34,7 @@ const LogIn = (props) => {
             <form className="login" onSubmit={submitHandler}>
                 <input type="text" name="username" placeholder="Enter your username." value={info.username} onChange={handleChange}/>
                 <input type="text" name="password" placeholder="Enter your password." value={info.password} onChange={handleChange}/>
-                <Button type="primary" htmlType="submit">Submit</Button>
+                <button type="submit">Submit</button>
             </form>
             <div className="intro">
                 <h2>Please log in with the following credentials:</h2>
