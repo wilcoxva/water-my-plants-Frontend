@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import 'antd/dist/antd.css';
+import { Modal } from 'antd';
 import Navigation from './Navigation';
 
 const LogIn = (props) => {
@@ -7,6 +9,7 @@ const LogIn = (props) => {
     const isLoggedIn = props.isLoggedIn;
 
     const [info, setInfo] = useState("");
+    const [error, setError] = useState(false);
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -24,8 +27,14 @@ const LogIn = (props) => {
         })
         .catch(err => {
             console.log(err);
+            setError(true);
         });
     };
+
+    const handleCancel = e => {
+        console.log(e);
+        setError(false);
+      };
 
     return (
         <div className="main-bg">
@@ -39,7 +48,15 @@ const LogIn = (props) => {
                 <h2>Please log in with the following credentials:</h2>
                 <h2>username: username1</h2>
                 <h2>password: password</h2>
-            </div>  
+            </div> 
+            <Modal
+            title="Error"
+            visible={error}
+            onOk={handleCancel}
+            onCancel={handleCancel}
+            >
+            <p>Credentials not valid.  Please try again.</p>
+            </Modal> 
         </div>
     )
 };

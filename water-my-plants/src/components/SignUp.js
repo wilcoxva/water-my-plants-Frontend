@@ -11,7 +11,6 @@ const SignUp = (props) => {
     const [info, setInfo] = useState("");
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
-    const [dialogue, setDialogue] = useState("");
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -30,7 +29,6 @@ const SignUp = (props) => {
         .catch(err => {
             console.log(err.response.data);
             setError(true);
-            setDialogue(`${err.response.data}`);
         });
     };
 
@@ -45,20 +43,10 @@ const SignUp = (props) => {
         setError(false);
       };
 
-    const handleOkErr = e => {
-        console.log(e);
-        setError(false);
-      };
-    
-    const handleCancelErr = e => {
-        console.log(e);
-        setError(false);
-      };
-
     return (
-        <div>
+        <div className="main-bg">
             <Navigation isLoggedIn={isLoggedIn} />
-            <form onSubmit={submitHandler}>
+            <form className="login" onSubmit={submitHandler}>
                 <input type="text" name="username" placeholder="Enter your new username." value={info.username} onChange={handleChange}/>
                 <input type="text" name="password" placeholder="Enter your new password." value={info.password} onChange={handleChange}/>
                 <input type="text" name="phoneNumber" placeholder="Enter your phone number." value={info.phoneNumber} onChange={handleChange}/>
@@ -75,10 +63,9 @@ const SignUp = (props) => {
             <Modal
             title="Error"
             visible={error}
-            onOk={handleOkErr}
-            onCancel={handleCancelErr}
+            onOk={handleCancel}
+            onCancel={handleCancel}
             >
-            <p>{dialogue}</p>
             <p>Username or phone number is already in use.</p>
             <p>Or you forgot to fill in one of the fields.</p>
             <p>Try again!</p>
