@@ -10,11 +10,13 @@ const Plant = (props) => {
     const isLoggedIn = props.isLoggedIn;
 
     useEffect(() => {
+        let isMounted = true;
         axiosWithAuth()
         .get(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`)
         .then(res => {
-            setPlant(res.data);
+            if (isMounted) setPlant(res.data);
         })
+        return () => { isMounted = false };
     }, [props.match.params.plantId]);
 
     const deleteHandler = (e) => {

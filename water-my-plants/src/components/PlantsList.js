@@ -13,6 +13,7 @@ const PlantsList = (props) => {
         axiosWithAuth()
         .get('https://water-my-plants-backend-vw.herokuapp.com/user/plants')
         .then(res => {
+            console.log("isMounted", isMounted)
             if (isMounted) setPlants(res.data);
         })
         return () => { isMounted = false };
