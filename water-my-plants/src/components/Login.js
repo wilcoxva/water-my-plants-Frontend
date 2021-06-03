@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { Button } from 'antd';
 import Navigation from './Navigation';
 
 const LogIn = (props) => {

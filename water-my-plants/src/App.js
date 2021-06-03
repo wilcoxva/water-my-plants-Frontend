@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './css/main.css';
-import { Home, About, Contact, Navigation, Plant, SignUp } from './components';
+import { Home, About, Contact, Plant, SignUp } from './components';
 import { Route } from 'react-router-dom';
 import LogIn from './components/Login';
 import PlantsList from './components/PlantsList';
@@ -26,8 +26,6 @@ const App = () => {
     <div>
       {/* <Navigation isLoggedIn={isLoggedIn}/> */}
       <Route exact path="/" render={props => (<Home {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
-      <Route path="/about" render={props => (<About {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
-      <Route path="/contact" render={props => (<Contact {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
       <PrivateRoute path="/PlantsList" component={props => (<PlantsList {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
       <Route exact path="/LogIn" render={props => (<LogIn {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
       <Route path="/SignUp" render={props => (<SignUp {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />

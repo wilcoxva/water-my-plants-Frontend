@@ -9,24 +9,28 @@ const PlantsList = (props) => {
     const isLoggedIn = props.isLoggedIn;
 
     useEffect(() => {
+        let isMounted = true;
         axiosWithAuth()
         .get('https://water-my-plants-backend-vw.herokuapp.com/user/plants')
         .then(res => {
-            setPlants(res.data);
+            if (isMounted) setPlants(res.data);
         })
+        return () => { isMounted = false };
     }, []);
 
     const [user, setUser] = useState([]);
 
     useEffect(() => {
+        let isMounted = true;
         axiosWithAuth()
         .get('https://water-my-plants-backend-vw.herokuapp.com/user')
         .then(res => {
-            setUser(res.data);
+            if (isMounted) setUser(res.data);
         })
+        return () => { isMounted = false };
     }, []);
 
-    const [info, setInfo] = useState("");
+    const [info, setInfo] = useState({info: ''});
 
     const handleChange = (e) => {
         e.preventDefault();

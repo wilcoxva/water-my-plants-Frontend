@@ -12,8 +12,6 @@ const Navigation = ({isLoggedIn}) => {
             <h2>Water My Plants</h2>
             <div className="links">
               <GreenLink to="/">Home</GreenLink>
-              <GreenLink to="/about">About</GreenLink>
-              <GreenLink to="/contact">Contact</GreenLink>
               {isLoggedIn ?
                 <GreenLink to="/PlantsList">PlantsList</GreenLink> :
                 <GreenLink />
@@ -29,16 +27,14 @@ const Navigation = ({isLoggedIn}) => {
           <h2>Water My Plants</h2>
           <div className="links">
             <PinkLink to="/">Home</PinkLink>
-            <PinkLink to="/about">About</PinkLink>
-            <PinkLink to="/contact">Contact</PinkLink>
             {isLoggedIn ?
               <PinkLink to="/PlantsList">PlantsList</PinkLink> :
               <PinkLink to="/" />
             }
             {isLoggedIn ?
               <PinkLink to="/LogOut">LogOut</PinkLink> :
-              [<PinkLink to="/LogIn">LogIn</PinkLink>,
-              <PinkLink to="/SignUp">SignUp</PinkLink>]
+              [<PinkLink key="login" to="/LogIn">LogIn</PinkLink>,
+              <PinkLink key="signup" to="/SignUp">SignUp</PinkLink>]
             }
           </div>
         </div>
