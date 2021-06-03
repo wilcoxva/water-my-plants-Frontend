@@ -14,7 +14,7 @@ const PlantsList = (props) => {
         .then(res => {
             setPlants(res.data);
         })
-    }, [plants]);
+    }, []);
 
     const [user, setUser] = useState([]);
 
@@ -24,7 +24,7 @@ const PlantsList = (props) => {
         .then(res => {
             setUser(res.data);
         })
-    }, [user]);
+    }, []);
 
     const [info, setInfo] = useState("");
 
@@ -69,7 +69,6 @@ const PlantsList = (props) => {
                     ))}
                 </div>
             </div>
-            
         </div>
     );
 };

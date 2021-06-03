@@ -46,14 +46,16 @@ const Plant = (props) => {
         <div className="alt-bg">
             <Navigation isLoggedIn={isLoggedIn} />
             <div className="pl-outer-container justify-content">
-            <form className="p-container" onSubmit={submitHandler}>
-                    <h1>Update your Plant</h1>
-                    <input type="text" name="nickname" placeholder="Enter your nickname." value={info.nickname} onChange={handleChange}/><br/>
-                    <input type="text" name="common_name" placeholder="Enter your common name." value={info.common_name} onChange={handleChange}/><br/>
-                    <input type="text" name="h2oFrequency" placeholder="Enter your h2o frequency." value={info.h2oFrequency} onChange={handleChange}/><br/>
-                    <input type="text" name="image_url" placeholder="Enter your image url." value={info.image_url} onChange={handleChange}/><br/>
-                    <button type="submit">Submit</button>
-                </form>  
+                <div className="p-container">
+                    <form onSubmit={submitHandler}>
+                        <h1>Update your Plant</h1>
+                        <input type="text" name="nickname" placeholder="Enter your nickname." value={info.nickname} onChange={handleChange}/><br/>
+                        <input type="text" name="common_name" placeholder="Enter your common name." value={info.common_name} onChange={handleChange}/><br/>
+                        <input type="text" name="h2oFrequency" placeholder="Enter your h2o frequency." value={info.h2oFrequency} onChange={handleChange}/><br/>
+                        <input type="text" name="image_url" placeholder="Enter your image url." value={info.image_url} onChange={handleChange}/><br/>
+                        <button type="submit">Submit</button>
+                    </form>  
+                </div>
                 <form className="p-container" key={plant.nickname} onSubmit={deleteHandler}>
                     <h1>{plant.nickname}</h1>
                     <p>Common name: {plant.common_name}</p>

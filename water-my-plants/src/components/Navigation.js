@@ -33,7 +33,7 @@ const Navigation = ({isLoggedIn}) => {
             <PinkLink to="/contact">Contact</PinkLink>
             {isLoggedIn ?
               <PinkLink to="/PlantsList">PlantsList</PinkLink> :
-              <PinkLink />
+              <PinkLink to="/" />
             }
             {isLoggedIn ?
               <PinkLink to="/LogOut">LogOut</PinkLink> :
