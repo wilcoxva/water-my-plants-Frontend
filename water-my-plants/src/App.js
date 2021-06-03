@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './css/main.css';
-import { Home, Plant, SignUp } from './components';
+import { Home, Plant, PlantsList, SignUp, LogIn, LogOut } from './components';
 import { Route } from 'react-router-dom';
-import LogIn from './components/Login';
-import PlantsList from './components/PlantsList';
-import LogOut from './components/Logout';
-import 'antd/dist/antd.css';
 import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {
@@ -24,13 +19,12 @@ const App = () => {
 
   return (
     <div>
-      {/* <Navigation isLoggedIn={isLoggedIn}/> */}
       <Route exact path="/" render={props => (<Home {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
-      <PrivateRoute path="/PlantsList" component={props => (<PlantsList {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
-      <Route exact path="/LogIn" render={props => (<LogIn {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
-      <Route path="/SignUp" render={props => (<SignUp {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
-      <Route path="/LogOut" render={props => (<LogOut {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
-      <PrivateRoute path="/:userId/:plantId" component={props => (<Plant {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />     
+      <PrivateRoute path="/plantslist" component={props => (<PlantsList {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route exact path="/login" render={props => (<LogIn {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route path="/signup" render={props => (<SignUp {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <Route path="/logout" render={props => (<LogOut {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />
+      <PrivateRoute path="/:userid/:plantid" component={props => (<Plant {...props} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />)} />     
     </div>
   )
   };
