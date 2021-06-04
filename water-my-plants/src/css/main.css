@@ -28,13 +28,20 @@ h1 {
   height: 200vh;
   background-repeat: repeat;
 }
+.intro {
+  background-color: rgba(255, 255, 255, 0.541);
+  width: fit-content;
+  margin: auto;
+  padding: 100px;
+}
 .intro h2 {
   text-align: center;
   font-family: 'Garamond';
   font-weight: bold;
 }
 .login {
-  margin: 20px 20px 20px 40%;
+  margin: auto;
+  width: fit-content;
 }
 .login input {
   margin: 5px;
@@ -43,13 +50,14 @@ h1 {
   display: flex;
   justify-content: center;
 }
-.ncontainer h2 {
+.ncontainer h1 {
   margin-top: 10px;
   margin-right: 30px;
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Garamond';
 }
 .links {
-  margin-top: 13px;
+  margin-top: 15px;
+  font-size: large;
 }
 .pl-outer-container {
   display: flex;
@@ -61,7 +69,7 @@ h1 {
   width: 100%;
 }
 .p-container {
-  background-color: rgba(255, 255, 255, 0.795);
+  background-color: rgba(255, 255, 255, 0.541);
   border: 2px solid green;
   border-radius: 25px;
   margin: 2%;

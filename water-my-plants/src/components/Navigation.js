@@ -9,7 +9,7 @@ const Navigation = ({isLoggedIn}) => {
       <div className="App">
         {isLoggedIn ?
           <div className="ncontainer" style={{ backgroundImage: "linear-gradient(white, rgb(143, 185, 143))", }}>
-            <h2>Water My Plants</h2>
+            <h1>Water My Plants</h1>
             <div className="links">
               <GreenLink to="/">Home</GreenLink>
               <GreenLink to="/PlantsList">PlantsList</GreenLink>
@@ -17,7 +17,7 @@ const Navigation = ({isLoggedIn}) => {
             </div>
           </div> :
           <div className="ncontainer" style={{ backgroundImage: "linear-gradient(white, pink)", }}>
-          <h2>Water My Plants</h2>
+          <h1>Water My Plants</h1>
           <div className="links">
             <PinkLink to="/">Home</PinkLink>
             <PinkLink key="signup" to="/SignUp">SignUp</PinkLink>
