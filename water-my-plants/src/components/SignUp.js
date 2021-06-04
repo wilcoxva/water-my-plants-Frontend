@@ -41,6 +41,7 @@ const SignUp = (props) => {
     const handleCancel = e => {
         console.log(e);
         setError(false);
+        setInfo({username: "", password: "", phoneNumber: ""});
       };
 
     return (

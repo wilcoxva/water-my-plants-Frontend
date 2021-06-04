@@ -34,6 +34,7 @@ const LogIn = (props) => {
     const handleCancel = e => {
         console.log(e);
         setError(false);
+        setInfo({username: "", password: ""})
       };
 
     return (
