@@ -38,7 +38,7 @@ const Plant = (props) => {
     const submitHandler = (e) => {
         e.preventDefault();
         axiosWithAuth()
-        .put(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`, info)
+        .put(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantid}`, info)
         .then(res => {
             setPlant(res.data)
         })
