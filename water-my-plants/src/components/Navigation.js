@@ -12,30 +12,16 @@ const Navigation = ({isLoggedIn}) => {
             <h2>Water My Plants</h2>
             <div className="links">
               <GreenLink to="/">Home</GreenLink>
-              {isLoggedIn ?
-                <GreenLink to="/PlantsList">PlantsList</GreenLink> :
-                <GreenLink />
-              }
-              {isLoggedIn ?
-                <GreenLink to="/LogOut">LogOut</GreenLink> :
-                [<GreenLink to="/LogIn">LogIn</GreenLink>,
-                <GreenLink to="/SignUp">SignUp</GreenLink>]
-              }
+              <GreenLink to="/PlantsList">PlantsList</GreenLink>
+              <GreenLink to="/LogOut">LogOut</GreenLink>
             </div>
           </div> :
           <div className="ncontainer" style={{ backgroundImage: "linear-gradient(white, pink)", }}>
           <h2>Water My Plants</h2>
           <div className="links">
             <PinkLink to="/">Home</PinkLink>
-            {isLoggedIn ?
-              <PinkLink to="/PlantsList">PlantsList</PinkLink> :
-              <PinkLink to="/" />
-            }
-            {isLoggedIn ?
-              <PinkLink to="/LogOut">LogOut</PinkLink> :
-              [<PinkLink key="login" to="/LogIn">LogIn</PinkLink>,
-              <PinkLink key="signup" to="/SignUp">SignUp</PinkLink>]
-            }
+            <PinkLink key="signup" to="/SignUp">SignUp</PinkLink>
+            <PinkLink key="login" to="/LogIn">LogIn</PinkLink>
           </div>
         </div>
         }
@@ -64,6 +50,13 @@ const GreenLink = styled(Link)`
     background-color: green;
     color: white;
   }
+`
+
+const EmptyLink = styled(Link)`
+  text-decoration: none;
+  color: gray;
+  margin: 5px;
+  padding: 5px;
 `
 
 export default Navigation;

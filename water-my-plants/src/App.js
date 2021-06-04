@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Home, Plant, PlantsList, SignUp, LogIn, LogOut } from './components';
+import './css/main.css';
+import { Home, Plant, SignUp } from './components';
 import { Route } from 'react-router-dom';
+import LogIn from './components/Login';
+import PlantsList from './components/PlantsList';
+import LogOut from './components/Logout';
 import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {

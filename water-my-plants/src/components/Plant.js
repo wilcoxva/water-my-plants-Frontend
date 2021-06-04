@@ -12,19 +12,19 @@ const Plant = (props) => {
     useEffect(() => {
         let isMounted = true;
         axiosWithAuth()
-        .get(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`)
+        .get(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantid}`)
         .then(res => {
             if (isMounted) setPlant(res.data);
         })
         return () => { isMounted = false };
-    }, [props.match.params.plantId]);
+    }, [props.match.params.plantid]);
 
     const deleteHandler = (e) => {
         axiosWithAuth()
-        .delete(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantId}`)
+        .delete(`https://water-my-plants-backend-vw.herokuapp.com/user/${props.match.params.plantid}`)
         .then(res => {
             console.log(res)
-            props.history.push('/PlantsList');
+            props.history.push('/plantslist');
         })
     }
 
@@ -63,7 +63,7 @@ const Plant = (props) => {
                     <p>Common name: {plant.common_name}</p>
                     <p>Thirst level: {plant.h2oFrequency}</p>
                     <img src={plant.image_url} alt="Plant" width="200" height="150" /><br/>
-                    <Link to={{ pathname:'/PlantsList' }}>Go back</Link>
+                    <Link to={{ pathname:'/plantslist' }}>Go back</Link>
                     <button type="submit">Delete Plant</button>
                 </form>
             </div>
